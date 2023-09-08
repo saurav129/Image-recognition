@@ -6,11 +6,15 @@ import urllib
 import json
 import io
 
-# Load the pre-trained model
+# Load the pre-trained model resnet18
 model = torch.hub.load('pytorch/vision:v0.9.0', 'resnet18', pretrained=True)
 model.eval()
 
-# Define the transformations for image preprocessing
+# Define the transformations for image preprocessing to fit the model resnet18
+#transform.Resize(256): resize the image to 256 pixels
+#transform.CenterCrop(224): Crop to 224x224 pixels
+#transforms.ToTensor(): Convert the datatype of the image to pytorch tensor
+#transform.Normalize(): Generalizing the variations from 0 for each pixel, to make it fit the maodel
 transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
