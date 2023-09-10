@@ -14,7 +14,7 @@ model.eval()
 #transform.Resize(256): resize the image to 256 pixels
 #transform.CenterCrop(224): Crop to 224x224 pixels
 #transforms.ToTensor(): Convert the datatype of the image to pytorch tensor
-#transform.Normalize(): Generalizing the variations from 0 for each pixel, to make it fit the maodel
+#transform.Normalize(): Generalizing the variations from 0 for each pixel, to make it fit the model
 transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
